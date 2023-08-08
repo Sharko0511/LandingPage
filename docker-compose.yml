@@ -2,7 +2,7 @@ version: "3.1"
 services:
   web:
     image: odoo:16
-    container_name: web-odoo-mes
+    container_name: web-odoo-landing-page
     depends_on:
       - db
     volumes:
@@ -16,7 +16,7 @@ services:
       - odoo
   db:
     image: postgres:13
-    container_name: db-odoo-mes
+    container_name: web-odoo-landing-page
     environment:
       - POSTGRES_DB=postgres
       - POSTGRES_PASSWORD=odoo
@@ -27,7 +27,7 @@ services:
     networks:
       - odoo
   pgadmin:
-    container_name: pgadmin-odoo-mes
+    container_name: pgadmin-odoo-landing-page
     image: dpage/pgadmin4
     environment:
       PGADMIN_DEFAULT_EMAIL: amdin@admin.com
@@ -43,7 +43,7 @@ services:
   proxy:
     depends_on:
             - web
-    container_name: odoo-proxy-mes
+    container_name: odoo-proxy-landing-page
     build:
         context: .
         dockerfile: Dockerfile-nginx
