@@ -1,0 +1,47 @@
+<odoo>
+    <record id="action_link_shop" model="ir.actions.act_window">
+        <field name="name">Shop Info</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">link.shop</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_link_shop"
+              name="Shop Info"
+              parent="menu_shop_config"
+              action="action_link_shop"
+              sequence="10"/>
+
+    <record id="view_link_shop_form" model="ir.ui.view">
+        <field name="name">link.shop.form</field>
+        <field name="model">link.shop</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <field name="name"/>
+                    <field name="shop_id"/>
+                    <field name="day_of_trade"/>
+                    <field name="volume_of_trade" invisible="0"/>
+                    <field name="percent_of_discount" invisible="0"/>
+                    <field name="total_transfer"/>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_link_shop_tree" model="ir.ui.view">
+        <field name="name">link.shop.tree</field>
+        <field name="model">link.shop</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="shop_id"/>
+                <field name="day_of_trade"/>
+                <field name="volume_of_trade" invisible="1"/>
+                <field name="percent_of_discount" invisible="1"/>
+                <field name="total_transfer"/>
+            </tree>
+        </field>
+    </record>
+
+</odoo>

@@ -16,7 +16,7 @@ services:
       - odoo
   db:
     image: postgres:13
-    container_name: web-odoo-landing-page
+    container_name: db-odoo-landing-page
     environment:
       - POSTGRES_DB=postgres
       - POSTGRES_PASSWORD=odoo
