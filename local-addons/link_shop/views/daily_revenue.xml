@@ -1,0 +1,46 @@
+<odoo>
+    <record id="action_daily_revenue" model="ir.actions.act_window">
+        <field name="name">Daily Revenue</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">daily.revenue</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_daily_revenue"
+              name="Daily Revenue"
+              parent="menu_shop_config"
+              action="action_daily_revenue"
+              sequence="10"/>
+
+    <record id="view_daily_revenue_form" model="ir.ui.view">
+        <field name="name">daily.revenue.form</field>
+        <field name="model">daily.revenue</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <field name="shop_id"/>
+                    <field name="shop_rev" invisible="0"/>
+                    <field name="creation_date" invisible="0"/>
+                    <field name="trade_volume" invisible="0"/>
+                    <field name="total_transfer" invisible="0"/>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_daily_revenue_tree" model="ir.ui.view">
+        <field name="name">daily.revenue.tree</field>
+        <field name="model">daily.revenue</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="shop_id"/>
+                <field name="daily_shop_name"/>
+                <field name="shop_rev" invisible="1"/>
+                <field name="creation_date" invisible="0"/>
+                <field name="trade_volume" invisible="0"/>
+                <field name="total_transfer" invisible="0"/>
+            </tree>
+        </field>
+    </record>
+
+</odoo>

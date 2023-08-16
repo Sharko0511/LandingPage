@@ -1,17 +1,14 @@
-from odoo import models, fields, api
+from odoo import models, fields
 
-class Shop(models.Model):
+
+class LinkShop(models.Model):
     _name = 'link.shop'
     _description = 'Shop Model'
+    _rec_name = 'shop_code'
 
-    name = fields.Char(string='Shop Name', required=True)
-    shop_id = fields.Char(string='Shop ID', required=True)
-    day_of_trade = fields.Date(string='Day')
-    volume_of_trade = fields.Float(string='Total', invisible=True)
-    percent_of_discount = fields.Float(string='Percent', invisible=False)
-    total_transfer = fields.Float(string='Total Transfer', compute='_compute_total_transfer', store=True)
+    name = fields.Char(string='Shop Name', required=True,)
+    shop_code = fields.Char(string='Shop Code', required=True,)
+    daily_rev_id = fields.One2many('daily.revenue', 'shop_id', string='Daily Revenue')
+    discount_percent = fields.Float(string='Discount', required=True,)
 
-    @api.depends('volume_of_trade', 'percent_of_discount')
-    def _compute_total_transfer(self):
-        for record in self:
-            record.total_transfer = record.volume_of_trade * record.percent_of_discount / 100
+

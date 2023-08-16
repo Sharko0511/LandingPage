@@ -10,6 +10,6 @@ class WebsiteForm(http.Controller):
 
     @http.route(['/daily-report/submit'], type='http', auth="user", website=True)
     def daily_report_success(self, **kw):
-        print("Data received")
-        # request.env['link.shop'].sudo().creat(kw)
+        print("Data received", kw)
+        request.env['daily.revenue'].sudo().create(kw)
         return request.render("link_shop.user_thank", {})

@@ -29,6 +29,7 @@
         'views/website_menu.xml',
         'views/shop_menu.xml',
         'views/shop_view.xml',
+        'views/daily_revenue.xml',
         'views/website_form.xml',
     ],
     # only loaded in demonstration mode
