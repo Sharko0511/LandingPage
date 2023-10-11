@@ -20,6 +20,7 @@
                 <group>
                     <field name="shop_id"/>
                     <field name="shop_rev" invisible="0"/>
+                    <field name="daily_shop_name" invisible="0"/>
                     <field name="creation_date" invisible="0"/>
                     <field name="trade_volume" invisible="0"/>
                     <field name="total_transfer" invisible="0"/>
@@ -35,7 +36,7 @@
             <tree>
                 <field name="shop_id"/>
                 <field name="daily_shop_name"/>
-                <field name="shop_rev" invisible="1"/>
+                <field name="shop_rev" invisible="0"/>
                 <field name="creation_date" invisible="0"/>
                 <field name="trade_volume" invisible="0"/>
                 <field name="total_transfer" invisible="0"/>

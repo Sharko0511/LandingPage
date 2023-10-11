@@ -21,6 +21,7 @@
                     <field name="name"/>
                     <field name="shop_code" />
                     <field name="discount_percent" invisible="0"/>
+                    <field name="test" widget="img"/>
                 </group>
             </form>
         </field>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+<data>
+    <record id="view_link_shop_tree_inherit" model="ir.ui.view">
+        <field name="name">link.shop.tree.inherit</field>
+        <field name="model">link.shop</field>
+        <field name="inherit_id" ref="link_shop.view_link_shop_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//tree" position="attributes">
+                <attribute name="js_class">hospital_list_view</attribute>
+            </xpath>
+        </field>
+    </record>
+</data>
+</odoo>

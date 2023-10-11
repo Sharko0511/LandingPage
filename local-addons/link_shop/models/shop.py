@@ -10,5 +10,6 @@ class LinkShop(models.Model):
     shop_code = fields.Char(string='Shop Code', required=True,)
     daily_rev_id = fields.One2many('daily.revenue', 'shop_id', string='Daily Revenue')
     discount_percent = fields.Float(string='Discount', required=True,)
+    test =fields.Char()
 
 

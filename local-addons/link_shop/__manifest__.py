@@ -20,7 +20,7 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base', 'website'],
+    'depends': ['base', 'website', 'web'],
 
     # always loaded
     'data': [
@@ -31,9 +31,19 @@
         'views/shop_view.xml',
         'views/daily_revenue.xml',
         'views/website_form.xml',
+        'views/test_view.xml',
+
     ],
     # only loaded in demonstration mode
     'demo': [
         'demo/demo.xml',
     ],
+
+    'assets': {
+        'web.assets_backend': [
+            'link_shop/static/src/components/*/*.js',
+            'link_shop/static/src/components/*/*.xml',
+            'link_shop/static/src/components/*/*.scss',
+        ],
+    },
 }
